@@ -1,41 +1,173 @@
-+ //Ques1.What do you mean by arrays give one example of array and how you can declared an array?
+//Ques1.What do you mean by arrays give one example of array and how you can declared an array?
+//Ans1.An array is simply a way to store a collection of items of the same data type under a single .
 
-2 + //Ans1. An array is a collection of elements stored together under one name.
+#include <stdio.h>
+int main() {
+    int numbers[5] = {10, 20, 30, 40, 50};  // Declare and initialize array
 
-3 +
+    printf("Array elements are:\n");
+    printf("numbers[0] = %d\n", numbers[0]);
+    printf("numbers[1] = %d\n", numbers[1]);
+    printf("numbers[2] = %d\n", numbers[2]);
+    printf("numbers[3] = %d\n", numbers[3]);
+    printf("numbers[4] = %d\n", numbers[4]);
+return 0;
+}
+//Output
+Array elements are:
+numbers[0] = 10
+numbers[1] = 20
+numbers[2] = 30
+numbers[3] = 40
+numbers[4] = 50
 
-4 + #include <stdio.h>
+//Ques2.What do you mean by functions? Write the types of functions and give one example in code of each type?
+//Ans.function refers to a reubable,named block of code that performs a specific task.
+  * type of functions in C:-
+1.No arguments,no return value.
+2.with arguments,no return value.
+3.no arguments,but return value.
+4.With arguments and return value.
 
-5 + int main() {
+#include <stdio.h>
 
-6 + int numbers [5] = {10, 20, 30, 40, 50}; // Declare and initialize an array
+// 1. No arguments, no return value
+void greet() {
+    printf("Hello!\n");
+}
+// 2. With arguments, no return value
+void add(int a, int b) {
+    printf("Sum = %d\n", a + b);
+}
+// 3. No arguments, but returns value
+int getNumber() {
+    return 10;
+}
+// 4. With arguments and return value
+int multiply(int x, int y) {
+    return x * y;
+}
 
-7 + int i;
+int main() {
+    greet();
+    add(5, 3);
+    int num = getNumber();
+    printf("Number = %d\n", num);
+    int result = multiply(4, 6);
+    printf("Product = %d\n", result);
+    return 0;
+}
+//output
+Hello!
+Sum=8
+Number=10
+Product=24
 
-8 + printf("Elements of the array are:\n");
+Ques3.What do you mean by Pointers?Writeba code how you can initialise the pointer.
+Ans.A pointer is a variable that stores the memory address of another veriable.
+#include <stdio.h>
 
-9 + for(i = 0; i < 5; i++) {
+int main() {
+    int x = 25;
+    int *p;         // Pointer declaration
+    p = &x;         // Pointer initialization
 
-10 +
+    printf("Value of x = %d\n", x);
+    printf("Address of x = %p\n", &x);
+    printf("Pointer p stores address = %p\n", p);
+    printf("Value pointed by p = %d\n", *p);
 
-printf("%d\n",
+    // Modifying value using pointer
+    *p = 50;
+    printf("New value of x after modification through pointer = %d\n", x);
 
-numbers[i]);
+    return 0;
+}
+//output
+Value of a = 10
+Address of a = 0x7ffeefbff4ac  (example address)
+Value stored in pointer = 0x7ffeefbff4ac
+Value pointed by pointer = 10
 
-11 + }
+Ques4.What are the types of Array? Write in a code 1D & 2D included.
+Ans.There are mainly two types of arrays in C.
+1. One-Dimensional(1D)Array
+2.Two-Dimensional(2D)Array
 
-12 + return 0;
+#include <stdio.h>
 
-13 + }
+int main() {
+    // 1D Array
+    int marks[3] = {85, 90, 95};
+    printf("1D Array elements:\n");
+    for(int i = 0; i < 3; i++) {
+        printf("%d ", marks[i]);
+    }
 
-14
+    // 2D Array
+    int matrix[2][2] = {
+        {1, 2},
+        {3, 4}
+    };
 
-+ //Output: Elements of the array are:
+    printf("\n\n2D Array elements:\n");
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 2; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
 
-15 + 10
+    return 0;
+}
+//Output
+1D Array elements:
+85 90 95 
 
-16 + 20
+2D Array elements:
+1 2 
+3 4
 
-17 + 30
+Ques5.Explain the types of operators in code.
+Ans.
 
-18 + 40
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 5;
+
+    // Arithmetic Operators
+    printf("Addition: %d\n", a + b);
+    printf("Subtraction: %d\n", a - b);
+
+    // Relational Operator
+    printf("Is a > b? %d\n", a > b);
+
+    // Logical Operator
+    printf("Logical AND: %d\n", (a > b && b > 0));
+
+    // Assignment Operator
+    a += 5;
+    printf("After a += 5, a = %d\n", a);
+
+    // Increment/Decrement Operator
+    a++;
+    printf("After increment, a = %d\n", a);
+
+    return 0;
+}
+//Output
+Addition: 15
+Subtraction: 5
+Is a > b? 1
+Logical AND: 1
+After a += 5, a = 15
+After increment, a = 16
+
+
+
+
+
+
+
+

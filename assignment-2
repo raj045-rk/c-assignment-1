@@ -1,0 +1,21 @@
+// Q1. What do you mean by Structures?
+Definition:
+A structure in C is a user-defined data type that allows you to combine different types of data items together.
+
+#include <stdio.h>
+struct Student {
+    int id;
+    char name[20];
+    float marks;
+};
+
+int main() {
+    struct Student s1 = {1, "Raj", 85.5};
+    printf("ID: %d\nName: %s\nMarks: %.2f", s1.id, s1.name, s1.marks);
+    return 0;
+}
+/*
+output:
+ID:1
+Name:Raj
+Marks:85.50
